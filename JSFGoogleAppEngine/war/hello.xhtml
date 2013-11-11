@@ -16,6 +16,24 @@
 		<h:commandButton value="Welcome Me" action="welcome"></h:commandButton>
 	</h:form>
 	<h1>... with Primefaces!</h1>
-	<p:spinner />  
+	<p:spinner />
+  <p:tabView id="tabView">  
+  
+    <p:tab id="tab1" title="Pogoda na dziś">  
+	1 <p:spinner />
+    </p:tab>  
+  
+    <p:tab id="tab2" title="Pogoda krótkoterminowa"> 
+    2 	<p:spinner />
+     
+    </p:tab>  
+  
+    <p:tab id="tab3" title="Pogoda długoterminowa">  
+    3 	<p:spinner />
+    
+    </p:tab>  
+  
+</p:tabView>
+	  
 </h:body>
 </html>
