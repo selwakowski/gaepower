@@ -11,17 +11,23 @@
 </h:head>
 <h:body>
 	<h1>Google App Engine + JSF 2.0 example - hello.xhtml</h1>
-	<h:form>
-		<h:inputText value="#{helloBean.name}"></h:inputText>
-		<h:commandButton value="Welcome Me" action="welcome"></h:commandButton>
-	</h:form>
-	<h1>... with Primefaces!</h1>
-	<p:spinner />
+	<h:form id="form">
+
+    <p:selectOneMenu id="city" value="#{weatherBean.city}">  
+        <f:selectItem itemLabel="Select City" itemValue="" />  
+        <f:selectItems value="#{weatherBean.cities}" />  
+        <p:ajax update="weatherInfo"  
+                listener="#{weatherBean.handleCityChange}" />  
+        
+    </p:selectOneMenu>  
+
+<br><br></br></br>
+		<h:outputText id="weatherInfo" value="#{weatherBean.weatherInfo}"/>
+
+
   <p:tabView id="tabView">  
   
     <p:tab id="tab1" title="Pogoda na dziś">  
-	1 
-	<p:spinner />
     </p:tab>  
   
     <p:tab id="tab2" title="Pogoda krótkoterminowa"> 
@@ -37,6 +43,7 @@
     </p:tab>  
   
 </p:tabView>
+</h:form>
 	  
 </h:body>
 </html>
